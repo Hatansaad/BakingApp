@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.hatansaad.baking_app"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:1.1.0-alpha05"
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta1'
+    implementation "androidx.recyclerview:recyclerview:1.1.0-alpha05"
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation "com.google.android.exoplayer:exoplayer:2.10.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    /*androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+    androidTestImplementation"com.android.support.test.espresso:espresso-contrib:2.2.2"*/
+
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0-beta01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-beta01'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0-beta01'
+    androidTestImplementation 'androidx.test:rules:1.2.0-beta01'
+    androidTestImplementation 'androidx.test:runner:1.2.0-beta01'
+    androidTestImplementation('androidx.test.espresso:espresso-contrib:3.2.0-beta01')
+    androidTestImplementation "androidx.test.espresso.idling:idling-concurrent:3.2.0-beta01"
+
+    implementation('com.jakewharton:butterknife:8.8.1') {
+        exclude module: 'appcompat-v7'
+        exclude group: 'com.android.support'
+    }
+
+
+
+
+}
